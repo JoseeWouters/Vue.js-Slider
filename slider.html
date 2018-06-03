@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <slider>
+    <div id="slider" class="slider">
         <div class="slide">
             <div class="slide__image">
                 <img src="/images/slider-1.jpg" alt="Photo by Jared Rice on Unsplash">
@@ -26,13 +26,13 @@
                 <img src="/images/slider-3.jpg" alt="Photo by Boris Smokrovic on Unsplash">
             </div>
         </div>
-        <div class="slider__controls">
-            <a @click="prev" href="">Previous</a>
-            <span>Item 1 of 5</span>
-            <a @click="next" href="">Next</a>
+        <div class="slider__controls" aria-hidden="true">
+            <button type="button" @click="prev()">Previous</button>
+            <span>Item {{ currentNumber }} of 5</span>
+            <button type="button" @click="next()">Next</button>
         </div>
-    </slider>
-
+    </div>
+    
     <script src="slider.js"></script>
 </body>
 </html>

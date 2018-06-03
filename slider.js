@@ -1,20 +1,18 @@
+
 new Vue({
-    el: 'slider',
+    el: '#slider',
     data: {
         currentNumber: 0,
         timer: null
     },
     methods: {
-        prev: function() {
-            if (event) event.preventDefault()
-            this.currentNumber -= 1
-            alert('this is ' + this.currentNumber)
+
+        prev() {
+            this.currentNumber -= 1;
         },
     
-        next: function() {
-            if (event) event.preventDefault()
-            this.currentNumber += 1
-            alert('this is ' + this.currentNumber)
+        next() {
+            this.currentNumber += 1;
         }
     }
-})
+});

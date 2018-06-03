@@ -6,7 +6,7 @@ img {
     vertical-align: top;
 }
 
-slider {
+.slider {
     display: block;
     width: 800px;
     height: 533px;
@@ -21,6 +21,6 @@ slider {
 }
 
 .slider__controls {
-    width: 185px;
     margin: .5em auto;
+    text-align: center;
 }
