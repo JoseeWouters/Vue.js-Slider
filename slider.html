@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js Slider</title>
+    <link rel="stylesheet" href="slider.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <slider>
+        <div class="slide">
+            <div class="slide__image">
+                <img src="/images/slider-1.jpg" alt="Photo by Jared Rice on Unsplash">
+            </div>
+        </div>
+        <div class="slide slide--1">
+            <div class="slide__image">
+                <img src="/images/slider-2.jpg" alt="Photo by Trevor Cole on Unsplash">
+            </div>
+        </div>
+        <div class="slide slide--2">
+            <div class="slide__image">
+                <img src="/images/slider-3.jpg" alt="Photo by Boris Smokrovic on Unsplash">
+            </div>
+        </div>
+        <div class="slider__controls">
+            <a @click="prev" href="">Previous</a>
+            <span>Item 1 of 5</span>
+            <a @click="next" href="">Next</a>
+        </div>
+    </slider>
+
+    <script src="slider.js"></script>
+</body>
+</html>
