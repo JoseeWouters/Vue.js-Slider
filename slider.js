@@ -1,18 +1,30 @@
 
 new Vue({
-    el: '#slider',
+    el: '#app',
     data: {
-        currentNumber: 0,
-        timer: null
+        currentSlide: 0,
+        totalSlides: 0,
+        styleSliderPos: {
+            transform: 'none'
+        }
     },
     methods: {
 
         prev() {
-            this.currentNumber -= 1;
+            this.currentSlide -= 1;
+            this.updateStyles();
         },
     
         next() {
-            this.currentNumber += 1;
+            this.currentSlide += 1;
+            this.updateStyles();
+        },
+
+        updateStyles() { 
+            this.styleSliderPos = {
+                // No template literal because of IE11 compatiblity
+                transform: 'translateX(-' + this.currentSlide * 800 + 'px)'
+            }
         }
     }
 });

@@ -10,26 +10,30 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="slider" class="slider">
-        <div class="slide">
-            <div class="slide__image">
-                <img src="/images/slider-1.jpg" alt="Photo by Jared Rice on Unsplash">
+    <div id="app">
+        <div class="slider">
+            <div class="slider__container" :style="styleSliderPos">
+                <div class="slide">
+                    <div class="slide__image">
+                        <img src="/images/slider-1.jpg" alt="Photo by Jared Rice on Unsplash">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide__image">
+                        <img src="/images/slider-2.jpg" alt="Photo by Trevor Cole on Unsplash">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide__image">
+                        <img src="/images/slider-3.jpg" alt="Photo by Boris Smokrovic on Unsplash">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="slide slide--1">
-            <div class="slide__image">
-                <img src="/images/slider-2.jpg" alt="Photo by Trevor Cole on Unsplash">
+            <div class="slider__controls" aria-hidden="true">
+                <button type="button" @click="prev()">Previous</button>
+                <span>Item {{ currentSlide + 1 }} of {{ totalSlides }}</span>
+                <button type="button" @click="next()">Next</button>
             </div>
-        </div>
-        <div class="slide slide--2">
-            <div class="slide__image">
-                <img src="/images/slider-3.jpg" alt="Photo by Boris Smokrovic on Unsplash">
-            </div>
-        </div>
-        <div class="slider__controls" aria-hidden="true">
-            <button type="button" @click="prev()">Previous</button>
-            <span>Item {{ currentNumber }} of 5</span>
-            <button type="button" @click="next()">Next</button>
         </div>
     </div>
     

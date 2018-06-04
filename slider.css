@@ -9,15 +9,14 @@ img {
 .slider {
     display: block;
     width: 800px;
-    height: 533px;
-    padding: 2em;
+    margin: 2em;
     overflow: hidden;
-    border: 1px solid salmon;
 }
-
-.slide--1, .slide--2 {
-    position: absolute;
-    right: -800px;
+.slider__container {
+    display: flex;
+    transform: translateX(0);
+    transition: .3s ease-out;
+    
 }
 
 .slider__controls {
