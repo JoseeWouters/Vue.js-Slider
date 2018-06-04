@@ -4,9 +4,13 @@ new Vue({
     data: {
         currentSlide: 0,
         totalSlides: 0,
+        sliderWidth: 0,
         styleSliderPos: {
             transform: 'none'
         }
+    },
+    mounted: function() {
+        this.sliderWidth = this.$refs.slide.clientWidth;
     },
     methods: {
 
@@ -23,8 +27,9 @@ new Vue({
         updateStyles() { 
             this.styleSliderPos = {
                 // No template literal because of IE11 compatiblity
-                transform: 'translateX(-' + this.currentSlide * 800 + 'px)'
+                transform: 'translateX(-' + this.currentSlide * this.sliderWidth + 'px)'
             }
         }
+        
     }
 });
