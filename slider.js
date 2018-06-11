@@ -10,14 +10,8 @@ new Vue({
         }
     },
     mounted() {
-        // TODO
-        console.log(this.$refs.slide.clientWidth);
-        setTimeout(() => {
-            // TODO
-            console.log(this.$refs.slide.clientWidth);
-            this.sliderWidth = this.$refs.slide.clientWidth;
-            this.totalSlides = this.$refs.slideContainer.childElementCount;
-        }, 100);
+        this.sliderWidth = this.$refs.slide.clientWidth;
+        this.totalSlides = this.$refs.slideContainer.childElementCount;
     },
     methods: {
 
