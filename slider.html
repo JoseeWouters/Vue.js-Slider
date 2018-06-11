@@ -12,27 +12,27 @@
 <body>
     <div id="app">
         <div class="slider">
-            <div class="slider__container" :style="styleSliderPos">
+            <div class="slider__container" :style="styleSliderPos" ref="slideContainer">
                 <div class="slide" ref="slide">
                     <div class="slide__image">
-                        <img src="/images/slider-1.jpg" alt="Photo by Jared Rice on Unsplash">
+                        <img src="images/slider-1.jpg" alt="Photo by Jared Rice on Unsplash">
                     </div>
                 </div>
                 <div class="slide" ref="slide">
                     <div class="slide__image">
-                        <img src="/images/slider-2.jpg" alt="Photo by Trevor Cole on Unsplash">
+                        <img src="images/slider-2.jpg" alt="Photo by Trevor Cole on Unsplash">
                     </div>
                 </div>
                 <div class="slide" ref="slide">
                     <div class="slide__image">
-                        <img src="/images/slider-3.jpg" alt="Photo by Boris Smokrovic on Unsplash">
+                        <img src="images/slider-3.jpg" alt="Photo by Boris Smokrovic on Unsplash">
                     </div>
                 </div>
             </div>
             <div class="slider__controls" aria-hidden="true">
-                <button type="button" @click="prev()">Previous</button>
+                <button type="button" @click="prev()" v-bind:disabled="!isFirstSlide">Previous</button>
                 <span>Item {{ currentSlide + 1 }} of {{ totalSlides }}</span>
-                <button type="button" @click="next()">Next</button>
+                <button type="button" @click="next()" v-bind:disabled="!isLastSlide">Next</button>
             </div>
         </div>
     </div>
