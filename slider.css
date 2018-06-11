@@ -15,8 +15,7 @@ img {
 .slider__container {
     display: flex;
     transform: translateX(0);
-    transition: .3s ease-out;
-    
+    transition: .74s cubic-bezier(.38,0,.1,1);
 }
 
 .slider__controls {

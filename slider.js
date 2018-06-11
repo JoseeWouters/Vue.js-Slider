@@ -5,28 +5,36 @@ new Vue({
         currentSlide: 0,
         totalSlides: 0,
         sliderWidth: 0,
-        isFirstSlide: 0,
-        isLastSlide: 1,
         styleSliderPos: {
             transform: 'none'
         }
     },
-    mounted: function() {
-        this.sliderWidth = this.$refs.slide.clientWidth;
-        this.totalSlides = this.$refs.slideContainer.childElementCount;
+    mounted() {
+        // TODO
+        console.log(this.$refs.slide.clientWidth);
+        setTimeout(() => {
+            // TODO
+            console.log(this.$refs.slide.clientWidth);
+            this.sliderWidth = this.$refs.slide.clientWidth;
+            this.totalSlides = this.$refs.slideContainer.childElementCount;
+        }, 100);
     },
     methods: {
 
         prev() {
             this.currentSlide -= 1;
+            if (this.currentSlide < 0) {
+                this.currentSlide = this.totalSlides - 1;
+            }
             this.updateStyles();
-            this.checkNumberOfSlide();
         },
     
         next() {
             this.currentSlide += 1;
+            if (this.currentSlide > (this.totalSlides - 1)) {
+                this.currentSlide = 0;
+            }
             this.updateStyles();
-            this.checkNumberOfSlide();
         },
 
         updateStyles() { 
@@ -35,21 +43,6 @@ new Vue({
                 transform: 'translateX(-' + this.currentSlide * this.sliderWidth + 'px)'
             }
         },
-
-        checkNumberOfSlide: function() {
-            if (this.currentSlide === (this.totalSlides -1)) {
-                this.isLastSlide = 0;
-            }
-            if (this.currentSlide < (this.totalSlides -1)) {
-                this.isLastSlide = 1;
-            }
-            if (this.currentSlide > 0) {
-                this.isFirstSlide = 1;
-            }
-            if (this.currentSlide <= 0) {
-                this.isFirstSlide = 0;
-            }
-        }
         
     }
 });

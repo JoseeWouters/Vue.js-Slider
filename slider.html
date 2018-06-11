@@ -30,9 +30,11 @@
                 </div>
             </div>
             <div class="slider__controls" aria-hidden="true">
-                <button type="button" @click="prev()" v-bind:disabled="!isFirstSlide">Previous</button>
+                <button type="button" @click="prev()">Previous</button>
                 <span>Item {{ currentSlide + 1 }} of {{ totalSlides }}</span>
-                <button type="button" @click="next()" v-bind:disabled="!isLastSlide">Next</button>
+                <button type="button" @click="next()" :disabled="currentSlide >= totalSlides - 1">Next</button>
+                <!-- Please notice, this button is disabled once the 
+                    max is reached. Just to show off. -->
             </div>
         </div>
     </div>
