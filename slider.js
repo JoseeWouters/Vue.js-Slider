@@ -10,8 +10,10 @@ new Vue({
         }
     },
     mounted: function() { // No shorthand because of IE11 compatibility
-        this.sliderWidth = this.$refs.slide.clientWidth;
-        this.totalSlides = this.$refs.slideContainer.childElementCount;
+        this.$nextTick(function () {
+            this.sliderWidth = this.$refs.slide.clientWidth;
+            this.totalSlides = this.$refs.slideContainer.childElementCount;
+        });
     },
     methods: {
 
