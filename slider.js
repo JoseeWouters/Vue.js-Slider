@@ -9,13 +9,13 @@ new Vue({
             transform: 'none'
         }
     },
-    mounted() {
+    mounted: function() { // No shorthand because of IE11 compatibility
         this.sliderWidth = this.$refs.slide.clientWidth;
         this.totalSlides = this.$refs.slideContainer.childElementCount;
     },
     methods: {
 
-        prev() {
+        prev: function() {
             this.currentSlide -= 1;
             if (this.currentSlide < 0) {
                 this.currentSlide = this.totalSlides - 1;
@@ -23,7 +23,7 @@ new Vue({
             this.updateStyles();
         },
     
-        next() {
+        next: function() {
             this.currentSlide += 1;
             if (this.currentSlide > (this.totalSlides - 1)) {
                 this.currentSlide = 0;
@@ -31,7 +31,7 @@ new Vue({
             this.updateStyles();
         },
 
-        updateStyles() { 
+        updateStyles: function() { 
             this.styleSliderPos = {
                 // No template literal because of IE11 compatiblity
                 transform: 'translateX(-' + this.currentSlide * this.sliderWidth + 'px)'
