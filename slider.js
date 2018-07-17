@@ -16,6 +16,11 @@ new Vue({
         });
     },
     methods: {
+        
+        goToSlide: function(slide) {
+            this.currentSlide = slide;
+            this.updateStyles();
+        },
 
         prev: function() {
             this.currentSlide -= 1;

@@ -34,6 +34,11 @@
                 <span>Item {{ currentSlide + 1 }} of {{ totalSlides }}</span>
                 <button type="button" @click="next()" :disabled="currentSlide >= totalSlides - 1">Next</button>
                 <!-- Please notice, this button is disabled once the max is reached. Just to show off. -->
+                <div class="bullets">
+                    <button @click="goToSlide(0)">1</button>
+                    <button @click="goToSlide(1)">2</button>
+                    <button @click="goToSlide(2)">3</button>
+                </div>
             </div>
         </div>
     </div>
